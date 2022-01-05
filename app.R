@@ -15,6 +15,7 @@ library(ggvenn)
 ui <- fluidPage(id= "test",
                 tags$style('#test{
                              background-color: #540007;
+                             font-family: "Rockwell";
               }'),
 
 # Title panel -------------------------------------------------------------
@@ -60,13 +61,67 @@ ui <- fluidPage(id= "test",
        )
      )
    ),
+
 # Main Panel --------------------------------------------------------------
-   mainPanel()
+   mainPanel(
+      tabsetPanel(
+         tabPanel("Venn",plotOutput("Venn")),#Plot Venn
+         tabPanel("Table",tableOutput("Tbl"))
+      )
+
+
+   )
 )
 )
 
 # Define server logic required to draw a Venn Diagram
 server <- function(input, output) {
+
+
+
+   #Reactive file
+   inFile <- reactive({
+      input$file1
+   })
+
+   #Reactive data
+   data <- reactive({
+      if (is.null(inFile()))
+         return(NULL)
+
+      read_csv2(file = inFile()$datapath)
+   })
+
+
+
+
+
+   output$Venn <- renderPlot({
+
+      if(is.null(data())){
+         return(NULL)
+      } else {
+         #
+         #List for organize data
+         ls <- list()
+         for(i in 1:ncol(data())){
+            vec <- data()[,i]
+            ls[[i]] <- vec[!is.na(vec)]
+         }
+         names(ls) <- colnames(data())
+         ggvenn(ls)
+      }
+   })
+
+   output$Tbl <- renderText({
+      if(is.null(data())){
+         return(NULL)
+      } else {
+         paste(str_detect(string = data(),pattern = "NA") %>% sum())
+
+
+      }
+   })
 
 }
 
