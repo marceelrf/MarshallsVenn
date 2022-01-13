@@ -16,12 +16,12 @@ library(viridis)
 ui <- fluidPage(
     id= "test",
     tags$style('#test{
-    background-color: #540007;
-               font-family: "Rockwell";}'
+                             background-color: #540007;
+                             font-family: "Rockwell";}'
                ),
     tags$head(tags$style(HTML("a {color: #917c00}"))),#Colors of links
     # Application title
-    titlePanel(windowTitle = "Marshall's Venn",
+    titlePanel(
         div(
             id="panelTitle",
             tags$style('#panelTitle{
@@ -297,15 +297,15 @@ server <- function(input, output) {
             vecCols<- c("#f8766d","#7cae00","#00bfc4","#c77cff")
         } else {
             if (input$colors == "viridis") {
-                vecCols <- viridis(n = length(data()),option = "D",direction = 1)
+                vecCols <- viridis(n = 4,option = "D")
             } else {
                 if (input$colors == "plasma") {
-                    vecCols <- viridis(n = length(data()),option = "C",direction = 1)
+                    vecCols <- viridis(n = 4,option = "C")
                 } else {
                     if (input$colors == "inferno") {
-                        vecCols <- viridis(n = length(data()),option = "B",direction = 1)
+                        vecCols <- viridis(n = 4,option = "B")
                     } else {
-                        vecCols <- viridis(n = length(data()),option = "A",direction = 1)
+                        vecCols <- viridis(n = 4,option = "A")
                     }
                 }
 
@@ -338,13 +338,13 @@ server <- function(input, output) {
             ggtitle(label = input$title,
                     subtitle = input$subtitle) +
             theme(
-                text = element_text(family = "serif"),
+                text = element_text(family = "Book Antiqua"),
                 plot.title = element_text(hjust = 0.5,
-                                          family = "serif",
+                                          family = "Times New Roman",
                                           face = "bold",
                                           size = 20),
                 plot.subtitle = element_text(hjust = 0.5,
-                                             family = "serif",
+                                             family = "Times New Roman",
                                              face = "italic",
                                              size = 14))
     })
