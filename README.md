@@ -29,7 +29,7 @@ on“Marshall Tools”**).
 
 I am grateful to the São Paulo State Research Support Foundation
 ([FAPESP](https://fapesp.br/ "FAPESP")), for its financial assistance.
-Process number 2018/05731-7. This app would not be possible without
+Process number **2018/05731-7**. This app would not be possible without
 tidyverse, shiny, viridis and ggvenn packages.
 
 ### Where find me?
@@ -39,7 +39,7 @@ the Biosciences Institute of Botucatu under the supervision of dr.
 [Willian
 Zambuzzi](https://scholar.google.com.br/citations?user=bMhT1QsAAAAJ&hl=pt-BR).
 I’m on [Twitter](https://twitter.com/marceelrf "marceelrf twitter"), and
-[Instagram](https://www.instagram.com/marceelrf/)on personal @marceelrf
+[Instagram](https://www.instagram.com/marceelrf/) on personal @marceelrf
 accounts. Please check out my Github.
 
 See you!
