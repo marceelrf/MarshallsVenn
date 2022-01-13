@@ -1,3 +1,6 @@
+
+
+```r
 library(shiny)
 library(tidyverse)
 library(ggvenn)
@@ -274,7 +277,6 @@ server <- function(input, output) {
             return(ls)
         }
 
-
     })
 
     #Colors
@@ -310,7 +312,6 @@ server <- function(input, output) {
         }
     })
 
-
     plot1 <- reactive({
         ggvenn(data(),
                show_percentage = input$Percent,
@@ -335,8 +336,6 @@ server <- function(input, output) {
                                              face = "italic",
                                              size = 14))
     })
-
-
 
     output$Venn <- renderPlot({
 
@@ -363,7 +362,51 @@ server <- function(input, output) {
 }
 
 # Run the application
-shinyApp(ui = ui, server = server)
+# shinyApp(ui = ui, server = server)
 
 # SessionInfo
 sessionInfo()
+```
+
+```
+## R version 4.0.3 (2020-10-10)
+## Platform: x86_64-w64-mingw32/x64 (64-bit)
+## Running under: Windows 10 x64 (build 19043)
+## 
+## Matrix products: default
+## 
+## locale:
+## [1] LC_COLLATE=Portuguese_Brazil.1252  LC_CTYPE=Portuguese_Brazil.1252   
+## [3] LC_MONETARY=Portuguese_Brazil.1252 LC_NUMERIC=C                      
+## [5] LC_TIME=Portuguese_Brazil.1252    
+## 
+## attached base packages:
+## [1] grid      stats     graphics  grDevices utils     datasets  methods  
+## [8] base     
+## 
+## other attached packages:
+##  [1] viridis_0.5.1     viridisLite_0.3.0 ggvenn_0.1.9      forcats_0.5.1    
+##  [5] stringr_1.4.0     dplyr_1.0.7       purrr_0.3.4       readr_1.4.0      
+##  [9] tidyr_1.1.3       tibble_3.1.2      ggplot2_3.3.5     tidyverse_1.3.1  
+## [13] shiny_1.6.0      
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_1.0.7        lubridate_1.7.10  ps_1.6.0          assertthat_0.2.1 
+##  [5] digest_0.6.27     utf8_1.1.4        mime_0.10         R6_2.5.0         
+##  [9] cellranger_1.1.0  backports_1.2.1   reprex_2.0.0      evaluate_0.14    
+## [13] httr_1.4.2        highr_0.8         pillar_1.6.1      rlang_0.4.10     
+## [17] readxl_1.3.1      rstudioapi_0.13   callr_3.6.0       jquerylib_0.1.3  
+## [21] rmarkdown_2.11    webshot_0.5.2     munsell_0.5.0     broom_0.7.6      
+## [25] compiler_4.0.3    httpuv_1.5.5      modelr_0.1.8      xfun_0.22        
+## [29] pkgconfig_2.0.3   htmltools_0.5.1.1 tidyselect_1.1.0  gridExtra_2.3    
+## [33] fansi_0.4.2       withr_2.4.1       crayon_1.4.1      dbplyr_2.1.1     
+## [37] later_1.3.0       jsonlite_1.7.2    xtable_1.8-4      gtable_0.3.0     
+## [41] lifecycle_1.0.0   DBI_1.1.1         magrittr_2.0.1    scales_1.1.1     
+## [45] cachem_1.0.4      cli_2.4.0         stringi_1.5.3     fs_1.5.0         
+## [49] promises_1.2.0.1  xml2_1.3.2        bslib_0.2.4       ellipsis_0.3.2   
+## [53] generics_0.1.0    vctrs_0.3.8       Cairo_1.5-12.2    tools_4.0.3      
+## [57] glue_1.4.2        markdown_1.1      hms_1.0.0         processx_3.5.1   
+## [61] fastmap_1.1.0     yaml_2.2.1        colorspace_2.0-0  rvest_1.0.0      
+## [65] knitr_1.31        haven_2.3.1       sass_0.3.1
+```
+
